@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Router, hashHistory } from 'react-router';
+import Routes from './config/Routes';
 
-export default class App extends Component {
-  render() {
-    return (
-      <h1>Hello, world.</h1>
-    );
-  }
-}
+const App = () => (
+  <Router history={ hashHistory }>
+    {Routes}
+  </Router>
+);
+
+export default App
