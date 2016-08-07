@@ -23,7 +23,6 @@ class PhotoListContainer extends Component {
     })
     .then(response => response.json()) // What is this response object that's coming back ??
     .then(data => {
-      console.log(data.slice(0, 50));
       this.props.receivePhotos(data.slice(0, 50));
     })
     .catch(console.log);
