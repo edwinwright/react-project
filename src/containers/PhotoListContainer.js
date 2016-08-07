@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PhotoList from '../components/PhotoList';
 import * as actions from '../actions/photos';
-import fetchPhotos from '../api/photos';
+import * as api from '../api/photos';
 
 // NOTE: Do I need to import this stuff ??
 // import es6promise from 'es6-promise';
@@ -10,13 +10,9 @@ import fetchPhotos from '../api/photos';
 
 class PhotoListContainer extends Component {
 
-  constructor () {
-    super();
-  }
 
   componentDidMount() {
     fetchPhotos('http://jsonplaceholder.typicode.com/photos')
-      .then(response => response.json())
       .then(data => {
         this.props.receivePhotos(data.slice(0, 50))
       })
