@@ -12,7 +12,6 @@ class PhotoListContainer extends Component {
     this.state = {
       photos: []
     };
-    // this.fetchPhotos = this.fetchPhotos.bind(this);
   }
 
   componentDidMount() {
@@ -25,16 +24,14 @@ class PhotoListContainer extends Component {
     })
     .then(response => response.json()) // What is this response object that's coming back ??
     .then(data => {
-      this.setState({photos : data.slice(1, 50) });
+      this.setState({photos : data.slice(0, 50) });
     })
-    .catch((err)=> {
-      console.log(err);
-    });
+    .catch(console.log);
   }
 
   render() {
     return (
-      <PhotoList photos={this.state.photos} />
+      <PhotoList {...this.props} photos={this.state.photos} />
     );
   }
 }

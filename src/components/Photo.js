@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Photo extends Component {
-  render() {
-    return (
-      <h1>Photo</h1>
-    );
-  }
-}
+const Photo = ({ photo }) => (
+  <div>
+    <div>{photo.title}</div>
+    <img src={photo.thumbnailUrl} />
+  </div>
+);
+
+// TODO: Add propTypes
 
 export default Photo
+
+// TODO: This should be a nested route maybe
+// but we could get the photo data from the store once we have Redux

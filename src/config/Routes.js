@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import PhotoListContainer from "../containers/PhotoListContainer";
 import Photo from "../components/Photo";
 
