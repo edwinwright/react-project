@@ -1,14 +1,11 @@
 import React from 'react';
-import { createStore } from 'redux';
 import { Router, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import Routes from './config/Routes';
-import reducer from './reducers/index';
-
-let store = createStore(reducer);
+import configureStore from './store/configStore'
 
 const App = () => (
-  <Provider store={store}>
+  <Provider store={configureStore()}>
     <Router history={ hashHistory }>
       {Routes}
     </Router>
